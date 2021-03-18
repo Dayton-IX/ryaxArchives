@@ -1,8 +1,8 @@
 import Head from 'next/head';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import Colors from '../constants/Colors';
 
-const Layout = props => {
+const Layout = ({children}: any) => {
     const [dark, setDark] = useState(false);
 
     return (
@@ -21,8 +21,8 @@ const Layout = props => {
                 {/* <link rel="apple-touch-icon" href="/%PUBLIC_URL%/assets/dfGreenLogo192.png" /> */}
                 <meta name="apple-mobile-web-app-status-bar" content={Colors.accentMain} />
 			</Head>
-            <main className="max-w-7xl">
-                {props.children}
+            <main className="max-w-7xl mx-auto">
+                {children}
             </main>
             <style global jsx>{`
                 :root {
