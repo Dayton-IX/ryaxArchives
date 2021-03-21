@@ -21,6 +21,7 @@ const MainButton = ({ className, style, children, onClick, disabled=false, loadi
                     border-radius: 5px;
                     color: ${Colors.dark.textMain};
                     padding: 8px 15px;
+                    display: flex;
                     transition: all 0.1s linear;
                     flex-direction: row;
                     align-items: center;

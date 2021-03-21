@@ -25,6 +25,11 @@ export default function Home() {
 		}
 	}
 
+	const onSubmit = (): void => {
+		console.log('🍇!!!')
+		setLoading(true);
+	}
+
 	useEffect(() => {
 		checkForm()
 	})
@@ -44,7 +49,7 @@ export default function Home() {
 						<input id="password" onChange={(e) => onUpdateForm(e.target.value, 'PASSWORD')} type="password" className="bg-light-backgroundMain dark:bg-dark-backgroundMain shadow-inner rounded-md text-light-textSecondary dark:text-dark-textSecondary text-lg w-11/12 mx-auto px-3 py-1 my-2" placeholder="Password" />
 					</form>
 				</div>
-				<MainButton onClick={() => console.log('🍇')} loading={loading} disabled={!formComplete} className="w-3/4 text-xl mx-auto my-3">Log In</MainButton>
+				<MainButton onClick={() => onSubmit()} loading={loading} disabled={!formComplete} className="w-3/4 text-xl mx-auto my-3">Log In</MainButton>
 			</div>
 		</Layout>
 	)
