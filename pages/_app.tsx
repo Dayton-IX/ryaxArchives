@@ -1,7 +1,7 @@
 import '../styles/globals.css';
 import { AppProps } from 'next/app';
-import { Auth } from '@supabase/ui'
-import { supabase } from '../utils/initSupabase'
+import { Auth } from '@supabase/ui';
+import { supabase } from '../utils/initSupabase';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (

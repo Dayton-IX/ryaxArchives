@@ -1,7 +1,17 @@
 import Head from 'next/head'
 import { useEffect, useState } from 'react';
+import useSWR from 'swr'
+import { supabase } from '../utils/initSupabase';
+
 import Layout from '../components/Layout'
 import MainButton from '../components/micro/MainButton';
+
+const fetcher = (url: string, token: string) =>
+  fetch(url, {
+    method: 'GET',
+    headers: new Headers({ 'Content-Type': 'application/json', token }),
+    credentials: 'same-origin',
+}).then((res) => res.json())
 
 export default function Home() {
 	const [loading, setLoading] = useState(false);
@@ -26,7 +36,7 @@ export default function Home() {
 	}
 
 	const onSubmit = (): void => {
-		console.log('🍇!!!')
+		console.log('🍇!!!');
 		setLoading(true);
 	}
 
