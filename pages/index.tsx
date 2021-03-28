@@ -36,7 +36,7 @@ export default function Home() {
 	}
 
 	const onSubmit = (): void => {
-		console.log('🍇!!!');
+		console.log('🍇!!!!');
 		setLoading(true);
 	}
 
