@@ -5,9 +5,8 @@ import useSWR from 'swr'
 import { Auth } from '@supabase/ui'
 import { supabase } from '../utils/initSupabase';
 
-import Layout from '../components/Layout'
 import MainButton from '../components/micro/MainButton';
-import { Session, User } from '@supabase/gotrue-js';
+import { User } from '@supabase/gotrue-js';
 
 enum FormField {
 	EMAIL,
@@ -27,10 +26,10 @@ const fetcher = (url: string, token: string) =>
     credentials: 'same-origin',
 }).then((res) => res.json())
 
-export default function Home() {
+export default function Home({children}: any) {
 	// const { user, session } = Auth.useUser()
 	const [user, setUser] = useState<User | null>(null);
-	const [session, setSession] = useState<Session | null>(null);
+	// const [session, setSession] = useState<Session | null>(null);
 	// const { data, error } = useSWR(session ? ['/api/auth/getUser', session.access_token] : null, fetcher)
 	const [authView, setAuthView] = useState(FormType.LOGIN)
 
@@ -41,15 +40,15 @@ export default function Home() {
 	  
 	useEffect(() => {
 		const { data: authListener } = supabase.auth.onAuthStateChange((event, session) => {
-		if (event === 'USER_UPDATED') setTimeout(() => setAuthView(FormType.LOGIN), 1000)
-		// Send session to /api/auth route to set the auth cookie.
-		// NOTE: this is only needed if you're doing SSR (getServerSideProps)!
-		fetch('/api/auth', {
-			method: 'POST',
-			headers: new Headers({ 'Content-Type': 'application/json' }),
-			credentials: 'same-origin',
-			body: JSON.stringify({ event, session }),
-		}).then((res) => res.json())
+			if (event === 'USER_UPDATED') setTimeout(() => setAuthView(FormType.LOGIN), 1000)
+			// Send session to /api/auth route to set the auth cookie.
+			// NOTE: this is only needed if you're doing SSR (getServerSideProps)!
+			fetch('/api/auth', {
+				method: 'POST',
+				headers: new Headers({ 'Content-Type': 'application/json' }),
+				credentials: 'same-origin',
+				body: JSON.stringify({ event, session }),
+			}).then((res) => res.json())
 		})
 
 		if (authListener) {
@@ -83,8 +82,9 @@ export default function Home() {
 			password: password
 		})
 		setUser(user);
-		setSession(session)
+		// setSession(session);
 		console.log(user);
+		setLoading(false);
 	}
 
 	useEffect(() => {
@@ -93,7 +93,7 @@ export default function Home() {
 
 	if (!user) {
 		return (
-			<Layout>
+			<div>
 				<Head>
 					<title>Log In</title>
 				</Head>
@@ -109,14 +109,16 @@ export default function Home() {
 					</div>
 					<MainButton onClick={() => onLogIn()} loading={loading} disabled={!formComplete} className="w-3/4 text-xl mx-auto my-3">Log In</MainButton>
 				</div>
-			</Layout>
+			</div>
 		)
 	}
 	
 	
 	return (
 		<div>
-
-		</div>
+            <main className="max-w-7xl mx-auto">
+                {children}
+            </main>
+        </div>
 	)
 }
