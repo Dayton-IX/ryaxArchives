@@ -6,7 +6,7 @@ import { Auth } from '@supabase/ui'
 import { supabase } from '../utils/initSupabase';
 
 import MainButton from './micro/MainButton';
-import { User } from '@supabase/gotrue-js';
+import { Session, User } from '@supabase/gotrue-js';
 
 enum FormField {
 	EMAIL,
@@ -27,10 +27,10 @@ const fetcher = (url: string, token: string) =>
 }).then((res) => res.json())
 
 const Layout = ({children}: any) => {
-	// const { user, session } = Auth.useUser()
-	const [user, setUser] = useState<User | null>(null);
+	const { user, session } = Auth.useUser()
+	// const [user, setUser] = useState<User | null>(null);
 	// const [session, setSession] = useState<Session | null>(null);
-	// const { data, error } = useSWR(session ? ['/api/auth/getUser', session.access_token] : null, fetcher)
+	const { data, error } = useSWR(session ? ['/api/auth/getUser', session.access_token] : null, fetcher)
 	const [authView, setAuthView] = useState(FormType.LOGIN)
 
 	const [loading, setLoading] = useState(false);
@@ -81,7 +81,7 @@ const Layout = ({children}: any) => {
 			email: email,
 			password: password
 		})
-		setUser(user);
+		// setUser(user);
 		// setSession(session);
 		console.log(user);
 		setLoading(false);
