@@ -9,11 +9,10 @@
   },
   "dependencies": {
     "@supabase/supabase-js": "^1.6.0",
-    "@supabase/ui": "^0.21.3",
+    "@supabase/ui": "^0.23.1",
     "next": "10.0.8",
     "react": "17.0.1",
-    "react-dom": "17.0.1",
-    "swr": "^0.5.4"
+    "react-dom": "17.0.1"
   },
   "devDependencies": {
     "@types/node": "^14.14.34",

@@ -1,8 +1,5 @@
 import Head from 'next/head';
-import Link from 'next/link';
 import { useEffect, useState } from 'react';
-import useSWR from 'swr'
-import { Auth } from '@supabase/ui'
 import { supabase } from '../utils/initSupabase';
 
 import MainButton from './micro/MainButton';
@@ -27,10 +24,7 @@ const fetcher = (url: string, token: string) =>
 }).then((res) => res.json())
 
 const Layout = ({children}: any) => {
-	const { user, session } = Auth.useUser()
-	// const [user, setUser] = useState<User | null>(null);
-	// const [session, setSession] = useState<Session | null>(null);
-	const { data, error } = useSWR(session ? ['/api/auth/getUser', session.access_token] : null, fetcher)
+	const user = supabase.auth.user()
 	const [authView, setAuthView] = useState(FormType.LOGIN)
 
 	const [loading, setLoading] = useState(false);
@@ -41,8 +35,6 @@ const Layout = ({children}: any) => {
 	useEffect(() => {
 		const { data: authListener } = supabase.auth.onAuthStateChange((event, session) => {
 			if (event === 'USER_UPDATED') setTimeout(() => setAuthView(FormType.LOGIN), 1000)
-			// Send session to /api/auth route to set the auth cookie.
-			// NOTE: this is only needed if you're doing SSR (getServerSideProps)!
 			fetch('/api/auth', {
 				method: 'POST',
 				headers: new Headers({ 'Content-Type': 'application/json' }),
@@ -81,8 +73,6 @@ const Layout = ({children}: any) => {
 			email: email,
 			password: password
 		})
-		// setUser(user);
-		// setSession(session);
 		console.log(user);
 		setLoading(false);
 	}
