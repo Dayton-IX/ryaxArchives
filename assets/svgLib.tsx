@@ -1,3 +1,5 @@
+import Colors from "../constants/Colors"
+
 type Props = {
     color?: string,
     className?: string,
@@ -42,4 +44,10 @@ export const Logo = ({className, width=128, height=158}: Props) => <svg classNam
     <stop offset="1" stopColor="#FA1DFF"/>
     </linearGradient>
     </defs>
+</svg>
+
+export const Stick = ({color=Colors.dark.textSecondary, className, width=31, height=27}: Props) => <svg className={className} width={width} height={height} viewBox="0 0 31 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <line x1="1.5" y1="25" x2="29.5" y2="4" stroke={color} strokeWidth="5"/>
+    <line x1="19.5092" y1="9.83435" x2="20.5092" y2="0.834352" stroke={color} strokeWidth="3"/>
+    <line x1="16.5909" y1="14.6213" x2="23.5909" y2="17.6213" stroke={color} strokeWidth="3"/>
 </svg>
