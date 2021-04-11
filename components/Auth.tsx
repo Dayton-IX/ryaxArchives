@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { supabase } from '../utils/initSupabase';
 
 import MainButton from './micro/MainButton';
-import { Session, User } from '@supabase/gotrue-js';
+import { Logo } from '../assets/svgLib';
 
 enum FormField {
 	EMAIL,
@@ -88,6 +88,7 @@ const Layout = ({children}: any) => {
 					<title>Log In</title>
 				</Head>
 				<div className="container flex flex-col mx-auto max-w-7xl w-5/6 md:w-1/2 lg:w-1/3 bg-light-backgroundMain dark:bg-dark-backgroundMain mt-20">
+					<Logo className="self-center -mt-14" />
 					<h1 className="text-4xl -ml-2 text-light-textMain dark:text-dark-textMain">Log In</h1>
 						<form onSubmit={(e) => e.preventDefault()}>
 							<div className="bg-light-backgroundSecondary dark:bg-dark-backgroundSecondary rounded-xl shadow hover:shadow-lg p-5 w-full mx-auto mt-3 flex flex-col">

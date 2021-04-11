@@ -26,3 +26,20 @@ export const OpenLock = ({className, width=57, height=54}: Props) => <svg classN
     </linearGradient>
     </defs>
 </svg>
+
+export const Logo = ({className, width=128, height=158}: Props) => <svg className={className} width={width} height={height} viewBox={`0 0 ${width} ${height}`} fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M87.1488 112.518C87.1488 125.714 76.6459 136.296 63.8294 136.296C51.0129 136.296 40.51 125.714 40.51 112.518C40.51 99.3234 51.0129 88.7407 63.8294 88.7407C76.6459 88.7407 87.1488 99.3234 87.1488 112.518Z" fill="white" stroke="white" strokeWidth="8"/>
+    <path d="M66.6852 133.433L54.2059 108.218L63.6765 108.218L61.32 91.4073L73.7992 116.623L64.3287 116.623L66.6852 133.433Z" fill="url(#paint0_linear)" stroke="url(#paint1_linear)" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round"/>
+    <path d="M110.363 71.5L17.2954 71.5C9.95257 71.5 4 78.2157 4 86.5L4 139C4 147.284 9.95257 154 17.2954 154L110.363 154C117.706 154 123.659 147.284 123.659 139L123.659 86.5C123.659 78.2157 117.706 71.5 110.363 71.5Z" stroke="white" strokeWidth="7" strokeLinecap="round" strokeLinejoin="round"/>
+    <path d="M30.5909 71.5L30.5909 41.5C30.5909 31.5544 34.0929 22.0161 40.3263 14.9835C46.5597 7.95088 55.0141 4 63.8295 4C72.6449 4 81.0993 7.95088 87.3327 14.9835C93.5662 22.0161 97.0681 31.5544 97.0681 41.5L97.0681 71.5" stroke="white" strokeWidth="7" strokeLinecap="round" strokeLinejoin="round"/>
+    <defs>
+    <linearGradient id="paint0_linear" x1="65.6329" y1="133.433" x2="65.6329" y2="91.4073" gradientUnits="userSpaceOnUse">
+    <stop stopColor="#9F00EA"/>
+    <stop offset="1" stopColor="#FA1DFF"/>
+    </linearGradient>
+    <linearGradient id="paint1_linear" x1="65.6329" y1="133.433" x2="65.6329" y2="91.4073" gradientUnits="userSpaceOnUse">
+    <stop stopColor="#9F00EA"/>
+    <stop offset="1" stopColor="#FA1DFF"/>
+    </linearGradient>
+    </defs>
+</svg>

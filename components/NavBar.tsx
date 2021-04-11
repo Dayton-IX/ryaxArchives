@@ -23,7 +23,7 @@ const NavBar = () => {
                 </div>
                 <MainButton className="flex flex-row" loading={loading} onClick={() => onSignOut()}>Sign Out</MainButton>
             </div>
-        </nav>    
+        </nav>
     )
 }
 
