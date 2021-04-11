@@ -14,7 +14,6 @@ const index = () => {
 
             <NavBar />
             <div className="max-w-7xl mx-auto">
-                <MainButton onClick={() => supabase.auth.signOut()}>Sign Out</MainButton>
             </div>
         </Auth>
     )
