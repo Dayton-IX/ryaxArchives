@@ -22,6 +22,12 @@ const index = () => {
                         </div>
                         <h2 className="text-dark-textSecondary text-2xl self-center ml-4">Max vs Wild</h2>
                     </div>
+                    <div className="w-5/6 mx-auto border-l-4 border-light-backgroundSecondary dark:border-dark-backgroundSecondary">
+                        <div className="flex flex-col group">
+                            <div className="w-11/12 mx-auto my-3 bg-dark-backgroundSecondary h-32 rounded-xl"></div>
+                            <h3 className="text-light-textMain dark:text-dark-textMain text-xl w-11/12 mx-5">Max Vs. Wild Part 1: Thirst For Adventure</h3>
+                        </div>
+                    </div>
                 </div>
             </div>
         </Auth>
