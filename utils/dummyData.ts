@@ -22,5 +22,12 @@ export const videos: Video[] = [
         imgUrl: 'imgPlaceholder',
         vidUrl: 'videoPlaceholder',
         series: Series.MAXVSWILD
+    },
+    {
+        id: '32535234567',
+        title: 'Max Vs. Wild Part 2: The Quest For Sticks',
+        imgUrl: 'imgPlaceholder',
+        vidUrl: 'videoPlaceholder',
+        series: Series.MAXVSWILD
     }
 ]
