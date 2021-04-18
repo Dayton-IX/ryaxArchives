@@ -1,9 +1,8 @@
 import Head from "next/head";
 import { Stick } from "../assets/svgLib";
 import Auth from "../components/Auth";
-import MainButton from "../components/micro/MainButton";
+import ThumbNail from "../components/home/ThumbNail";
 import NavBar from "../components/NavBar";
-import { supabase } from "../utils/initSupabase";
 
 
 const index = () => {
@@ -23,10 +22,7 @@ const index = () => {
                         <h2 className="text-dark-textSecondary text-2xl self-center ml-4">Max vs Wild</h2>
                     </div>
                     <div className="w-5/6 mx-auto border-l-4 border-light-backgroundSecondary dark:border-dark-backgroundSecondary">
-                        <div className="flex flex-col group">
-                            <div className="w-11/12 mx-auto my-3 bg-dark-backgroundSecondary h-32 rounded-xl"></div>
-                            <h3 className="text-light-textMain dark:text-dark-textMain text-xl w-11/12 mx-5">Max Vs. Wild Part 1: Thirst For Adventure</h3>
-                        </div>
+                        <ThumbNail title="Max Vs. Wild Part 1: Thirst For Adventure" imgURL="placeholder" />
                     </div>
                 </div>
             </div>
