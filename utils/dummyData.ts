@@ -29,5 +29,12 @@ export const videos: Video[] = [
         imgUrl: 'imgPlaceholder',
         vidUrl: 'videoPlaceholder',
         series: Series.MAXVSWILD
+    },
+    {
+        id: 'fffsefese4432rf',
+        title: 'Legend Of Max Part 1:',
+        imgUrl: 'imgPlaceholder',
+        vidUrl: 'videoPlaceholder',
+        series: Series.LEGENDOFMAX
     }
 ]
